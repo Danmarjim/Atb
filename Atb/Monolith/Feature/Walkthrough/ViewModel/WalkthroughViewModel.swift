@@ -1,14 +1,18 @@
 import Foundation
+import CoreLocation
+import AppTrackingTransparency
+
+enum WalkthroughStep {
+  case welcomeStep
+  case appTrackingTransparencyStep
+  case locationPermissionStep
+  case enjoyStep
+}
 
 class WalkthroughViewModel {
-  enum WalkthroughStep {
-    case welcomeStep
-    case appTrackingTransparencyStep
-    case locationPermissionStep
-    case enjoyStep
-  }
 
   var currentStep: WalkthroughStep = .welcomeStep
+  let locationManager = CLLocationManager()
 
   func getNextStep() {
     switch currentStep {
@@ -24,24 +28,46 @@ class WalkthroughViewModel {
     }
   }
 
-  func skipWalkthrough() {
-    // Handle skipping the walkthrough
-  }
-
   func performStepAction() {
     switch currentStep {
     case .welcomeStep:
       // Perform action for the app description step
       break
     case .appTrackingTransparencyStep:
-      // Perform action for the app tracking transparency step
-      break
+      requestAppTrackingPermission()
     case .locationPermissionStep:
-      // Perform action for the location permission step
-      break
+      requestLocationPermission()
     case .enjoyStep:
       // Perform action for the goodbye step
       break
     }
+  }
+}
+
+// MARK: Private methods
+extension WalkthroughViewModel {
+
+  private func requestLocationPermission() {
+    switch locationManager.authorizationStatus {
+    case .notDetermined:
+      locationManager.requestWhenInUseAuthorization()
+
+    case .authorizedAlways, .authorizedWhenInUse, .restricted, .denied:
+      navigateToNextStep()
+
+    @unknown default:
+      break
+    }
+  }
+
+  private func navigateToNextStep() {
+    DispatchQueue.main.async {
+      self.getNextStep()
+      // Perform any necessary UI updates here
+    }
+  }
+
+  private func requestAppTrackingPermission() {
+    ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
   }
 }

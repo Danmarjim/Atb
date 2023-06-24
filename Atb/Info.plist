@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+  <key>NSUserTrackingUsageDescription</key>
+  <string>Your data may be used to provide you with personalized advertising</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>We need your location to show stops close to you.</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>We need your location to show stops close to you.</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>We need your location to show stops close to you.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
