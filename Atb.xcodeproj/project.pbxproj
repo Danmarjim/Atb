@@ -15,6 +15,7 @@
 		1D39E03F2A46F973003ED1AD /* AtbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39E03E2A46F973003ED1AD /* AtbTests.swift */; };
 		1D39E0492A46F973003ED1AD /* AtbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39E0482A46F973003ED1AD /* AtbUITests.swift */; };
 		1D39E04B2A46F973003ED1AD /* AtbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39E04A2A46F973003ED1AD /* AtbUITestsLaunchTests.swift */; };
+		1D39E05B2A470DF3003ED1AD /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39E05A2A470DF3003ED1AD /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1D39E0442A46F973003ED1AD /* AtbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D39E0482A46F973003ED1AD /* AtbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtbUITests.swift; sourceTree = "<group>"; };
 		1D39E04A2A46F973003ED1AD /* AtbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1D39E05A2A470DF3003ED1AD /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +99,8 @@
 		1D39E0262A46F970003ED1AD /* Atb */ = {
 			isa = PBXGroup;
 			children = (
-				1D39E0272A46F970003ED1AD /* AppDelegate.swift */,
-				1D39E0292A46F970003ED1AD /* SceneDelegate.swift */,
-				1D39E02B2A46F970003ED1AD /* ViewController.swift */,
+				1D39E0572A470DA0003ED1AD /* Monolith */,
+				1D39E0582A470DAD003ED1AD /* Network */,
 				1D39E0302A46F973003ED1AD /* Assets.xcassets */,
 				1D39E0322A46F973003ED1AD /* LaunchScreen.storyboard */,
 				1D39E0352A46F973003ED1AD /* Info.plist */,
@@ -122,6 +123,72 @@
 				1D39E04A2A46F973003ED1AD /* AtbUITestsLaunchTests.swift */,
 			);
 			path = AtbUITests;
+			sourceTree = "<group>";
+		};
+		1D39E0572A470DA0003ED1AD /* Monolith */ = {
+			isa = PBXGroup;
+			children = (
+				1D39E05D2A470E69003ED1AD /* Infrastructure */,
+				1D39E05C2A470E61003ED1AD /* Home */,
+			);
+			path = Monolith;
+			sourceTree = "<group>";
+		};
+		1D39E0582A470DAD003ED1AD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1D39E0592A470DE0003ED1AD /* Manager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1D39E0592A470DE0003ED1AD /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1D39E05A2A470DF3003ED1AD /* ApiManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1D39E05C2A470E61003ED1AD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1D39E05E2A470E9A003ED1AD /* Model */,
+				1D39E05F2A470EA3003ED1AD /* View */,
+				1D39E0602A470EA9003ED1AD /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1D39E05D2A470E69003ED1AD /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				1D39E0272A46F970003ED1AD /* AppDelegate.swift */,
+				1D39E0292A46F970003ED1AD /* SceneDelegate.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		1D39E05E2A470E9A003ED1AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D39E05F2A470EA3003ED1AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D39E02B2A46F970003ED1AD /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D39E0602A470EA9003ED1AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D39E05B2A470DF3003ED1AD /* ApiManager.swift in Sources */,
 				1D39E02C2A46F970003ED1AD /* ViewController.swift in Sources */,
 				1D39E0282A46F970003ED1AD /* AppDelegate.swift in Sources */,
 				1D39E02A2A46F970003ED1AD /* SceneDelegate.swift in Sources */,
